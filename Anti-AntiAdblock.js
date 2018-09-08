@@ -1,14 +1,15 @@
 // ==UserScript==
 // @name         Anti-AntiAdblock
 // @namespace    Anti-AntiAdblock
-// @version      0.0.2
-// @description  This script returns normal text If site show rotated text to adblock users
+// @version      0.0.3
 // @homepage     https://raw.githubusercontent.com/AlexandrDV/Anti-AntiAdblock
 // @updateURL    https://raw.githubusercontent.com/AlexandrDV/Anti-AntiAdblock/master/Anti-AntiAdblock.js
 // @downloadURL  https://raw.githubusercontent.com/AlexandrDV/Anti-AntiAdblock/master/Anti-AntiAdblock.js
 // @icon         https://raw.githubusercontent.com/AlexandrDV/Anti-AntiAdblock/master/logo.png
+// @description  This script returns normal text If site show rotated text to adblock users
 // @author       AlexanderDV
-// @match        http://*/*
+// @include      http://*
+// @include      https://*
 // @grant        none
 // ==/UserScript==
 (function()
