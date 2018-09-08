@@ -1,13 +1,17 @@
 // ==UserScript==
-// @name         Anti Anti-Adblock
-// @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  This script returns normal text If site show rotated text to adblock users 
+// @name         Anti-AntiAdblock
+// @namespace    Anti-AntiAdblock
+// @version      0.0.2
+// @description  This script returns normal text If site show rotated text to adblock users
+// @homepage     https://raw.githubusercontent.com/AlexandrDV/Anti-AntiAdblock
+// @updateURL    https://raw.githubusercontent.com/AlexandrDV/Anti-AntiAdblock/master/Anti-AntiAdblock.js
+// @downloadURL  https://raw.githubusercontent.com/AlexandrDV/Anti-AntiAdblock/master/Anti-AntiAdblock.js
+// @icon         https://raw.githubusercontent.com/AlexandrDV/Anti-AntiAdblock/master/logo.png
 // @author       AlexanderDV
 // @match        http://*/*
 // @grant        none
 // ==/UserScript==
-(function() 
+(function()
 {
     'use strict';
 
@@ -17,9 +21,9 @@
     var byClass=false;
     //If clearStyle==true, script clear style of element
     var clearStyle=true;
-    
-    var equalWhitelist=['qaru.site'];
-    var equalBlacklist=null;
+
+    var equalWhitelist=null;
+    var equalBlacklist=[];
 
     var containWhitelist=null;
     var containBlacklist=null;
@@ -30,9 +34,9 @@
         if(equalWhitelist!=null)
         {
             for(v=0;v<equalWhitelist.length;v++)
-            {   
+            {
                 if(equalWhitelist[v]===document.location.hostname)
-                {   
+                {
                     return true;
                 }
             }
@@ -42,9 +46,9 @@
         if(equalBlacklist!=null)
         {
             for(v=0;v<equalBlacklist.length;v++)
-            {   
+            {
                 if(equalBlacklist[v]===document.location.hostname)
-                {     
+                {
                     return false;
                 }
             }
@@ -54,9 +58,9 @@
         if(containWhitelist!=null)
         {
             for(v=0;v<containWhitelist.length;v++)
-            {   
+            {
                 if(document.location.hostname.indexOf(containWhitelist[v])!==-1)
-                {      
+                {
                     return true;
                 }
             }
@@ -66,9 +70,9 @@
         if(containBlacklist!=null)
         {
             for(v=0;v<containBlacklist.length;v++)
-            {    
+            {
                 if(document.location.hostname.indexOf(containBlacklist[v])!==-1)
-                {  
+                {
                     return false;
                 }
             }
